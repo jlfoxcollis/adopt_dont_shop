@@ -1,12 +1,12 @@
 <body>
   <h3>Application Status:<%= @app.application_status %></h3>
   <% if @chosen_ones.count >= 1 && @app.application_status == "In Progress" %>
-    <%= link_to "Submit Application", application_path(@app.id, :application_status => "Pending") %>
+    <%= button_to "Submit Application", application_path(@app.id), params: {:application_status => "Pending"}, method: :patch %>
   <% end %>
   <% if @app.application_status == "Pending" %>
     <h3>Pets chosen for Adoption </h3>
     <% @chosen_ones.each do |pet| %>
-      <%= pet.name %>
+      <%= link_to "#{pet.name}", pet_path(pet.id) %>
     <% end %>
   <% end %>
 
@@ -14,24 +14,5 @@
   <%= @app.street %>
   <%=  "#{@app.city}" + ", " + "#{@app.state}" + " " + "#{@app.zip_code}" %>
   <%= @app.description %>
-  <% if @app.application_status == "In Progress" %>
-    <h3> Add a Pet to this Application</h3>
-    <%= form_tag application_path, method: :get do %>
-      <%= label_tag 'Search by Pet Name' %>
-      <%= text_field_tag 'search' %>
-      <div>
-        <%= submit_tag 'search' %>
-      </div>
-    <% end %>
-  <% end %>
-  <% if @selected %>
-    <% @selected.each do |selectee| %>
-      <h3>Want to adopt? </h3>
-      <%= selectee.name %>
-      <%= selectee.approximate_age %>
-      <%= selectee.sex %>
-      <%= selectee.adoptable %>
-      <%= button_to "Adopt this Pet?", application_path(@app.id), method: :get, params: {:pet_id => selectee.id, :adopt => "true"} %>
-    <% end %>
-  <% end %>
+  <%= render partial: 'adopt' %>
 </body>

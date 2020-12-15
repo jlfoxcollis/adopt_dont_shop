@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
   <header>
-    <ul class="nav-bar">
+    <ul class="navbar">
       <li><%= link_to "admin", admin_path %></li>
+      <li><%= link_to "Admin-Shelters", admin_shelters_path %></li>
+      <li><%= link_to "Admin-Apps", admin_applications_path %></li>
     </ul>
     <div class="nav-bar">
       <ul>
@@ -27,6 +28,6 @@
       <p><%= message %></p>
     <% end %>
     <%= yield %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
   </body>
 </html>

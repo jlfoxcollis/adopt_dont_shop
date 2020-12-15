@@ -1,7 +1,7 @@
 <body>
 
   <h2>Name: <%= "#{@pet.name}" %></h2>
-  <%= image_tag "#{@pet.image}" %><br>
+  <div class="image"><%= image_tag "#{@pet.image}" %></div><br>
   Description: <%= @pet.description %><br>
   Approx Age: <%= @pet.approximate_age %><br>
   Sex: <%= @pet.sex %><br>

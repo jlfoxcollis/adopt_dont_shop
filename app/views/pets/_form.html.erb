@@ -1,0 +1,8 @@
+<%= form_with model: @pet, method: method, url: pet_path(@pet.id), action: "/pets/", local: true, builder: LabellingFormBuilder do |form| %>
+  <%= form.text_field :image %><br>
+  <%= form.text_field :name %><br>
+  <%= form.text_field :description %><br>
+  <%= form.text_field :approximate_age %><br>
+  <%= form.select :sex, ["male", "female"] %><br>
+  <%= form.submit button_text %>
+<% end %>

@@ -1,0 +1,16 @@
+
+<%= @app.application_status %>
+<%= @app.id %>
+<%= @app.name %>
+<%= @app.street %>
+<%= @app.city %>
+<%= @app.state %>
+<%= @app.zip_code %>
+<%= @app.description %>
+<% if @app.all_approved %>
+  <h3> Application for Adoption has been Approved! </h3>
+<% elsif @app.not_all_approved %>
+  <h3> We regret to inform you that your home is not good enough for our pets. </h3>
+<% else %>
+  <%= render partial: 'section' %>
+<% end %>

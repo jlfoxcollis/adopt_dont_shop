@@ -20,6 +20,6 @@ RSpec.describe 'lists all shelters and apps' do
     expect(page).to have_content("#{@shelter1.name}")
     expect(page).to have_content("#{@shelter3.name}")
     expect(page).to have_content("#{@shelter2.name}")
-    expect(page).to have_content("Application #{@app.id}")
+    expect(page).to have_content(" #{@app.id}")
   end
 end

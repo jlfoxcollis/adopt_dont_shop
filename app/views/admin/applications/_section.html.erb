@@ -1,0 +1,29 @@
+<% @pets.each do |pet| %>
+  <section id="pet-<%= pet.name %>">
+    <%= pet.name %>
+    <% if pet.status == nil %>
+      <% if pet.apps_approved == 0 %>
+        <%= form_tag admin_application_path(@app.id), method: :get do %>
+          <%= hidden_field_tag :pet_id, "#{pet.id}" %>
+          <%= hidden_field_tag :pet_app_id, "#{pet.pet_app_id}" %>
+          <%= hidden_field_tag :status, "true" %>
+          <div id="accept-<%= pet.id %>">
+            <%= submit_tag 'Approve' %>
+          </div>
+        <% end %>
+      <% end %>
+      <%= form_tag admin_application_path(@app.id), method: :get do %>
+        <%= hidden_field_tag :pet_id, "#{pet.id}" %>
+        <%= hidden_field_tag :pet_app_id, "#{pet.pet_app_id}" %>
+        <%= hidden_field_tag :status, "false" %>
+        <div id="deny-<%= pet.id %>">
+          <%= submit_tag 'Reject' %>
+        <div>
+      <% end %>
+    <% elsif pet.status == true %>
+      <p> Approved! </p>
+    <% elsif pet.status == false %>
+      <p> Rejected! </p>
+    <% end %>
+  </section
+<% end %>

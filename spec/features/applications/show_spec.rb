@@ -29,8 +29,8 @@ RSpec.describe 'admin shelters index' do
 
     click_on "search"
     expect(page).to have_content("Thor")
-    expect(page).to have_link("Adopt this Pet?")
     click_on "Adopt this Pet?"
     click_on "Submit Application"
+
   end
 end

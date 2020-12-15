@@ -16,12 +16,11 @@ RSpec.describe 'From shelter pets index page create new pet' do
     click_on "Add Pet"
 
     expect(current_path).to eq("/shelters/#{@shelter1.id}/pets/new")
-
-    fill_in "image", with: ""
-    fill_in "name", with: 'Apollo'
-    fill_in "description", with: 'Dog'
-    fill_in "approximate_age", with: 3
-    fill_in "sex", with: "male"
+    fill_in "pet[image]", with: ""
+    fill_in "pet[name]", with: 'Apollo'
+    fill_in "pet[description]", with: 'Dog'
+    fill_in "pet[approximate_age]", with: 3
+    find("option[value='male']").click
 
     click_on 'Create Pet'
 

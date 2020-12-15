@@ -23,7 +23,8 @@ describe 'admin_apps show page' do
   end
 
   it "can update pets on application" do
-    visit "/admin/applications/#{@app.id}"
+    visit admin_application_path(@app.id)
+    
     within("#accept-#{@pet1.id}") do
       click_on "Approve"
     end

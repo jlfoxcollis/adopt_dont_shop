@@ -1,4 +1,4 @@
-<h1><%= link_to "#{@shelter.name}", show_shelter_path(@shelter.id) %>'s Pets</h1>
+<h1><%= link_to "#{@shelter.name}", shelter_path(@shelter.id) %>'s Pets</h1>
 <%= link_to "Add Pet", new_shelter_pet_path(@shelter.id) %><br>
 <% @shelter.pets.each do |pet| %>
   <% if pet.adoptable %>

@@ -1,17 +1,9 @@
-<%= form_tag applications_path, method: :post do %>
-  <%= label_tag 'name:' %>
-  <%= text_field_tag 'name' %><br>
-  <%= label_tag 'Street Address:' %>
-  <%= text_field_tag 'street' %><br>
-  <%= label_tag 'City:' %>
-  <%= text_field_tag 'city' %><br>
-  <%= label_tag 'State(abbr):' %>
-  <%= text_field_tag 'state' %><br>
-  <%= label_tag 'Zip Code' %>
-  <%= text_field_tag 'zip_code' %><br>
-  <%= label_tag 'How can you provide a good home for these pet(s)?' %>
-  <%= text_field_tag 'description' %>
-  <div>
-    <%= submit_tag 'Submit' %>
-  </div>
+<%= form_with model: @app, action: "/applications/", local: true, builder: LabellingFormBuilder do |form| %>
+  <%= form.text_field :name %><br>
+  <%= form.text_field :street %><br>
+  <%= form.text_field :city %><br>
+  <%= form.text_field :state %><br>
+  <%= form.text_field :zip_code %><br>
+  <%= form.text_field :description %><br>
+  <%= form.submit "Submit" %>
 <% end %>

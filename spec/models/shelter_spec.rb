@@ -40,17 +40,17 @@ describe Shelter, type: :model do
 
     it "can count adoptables" do
 
-      expect(@shelter1.count_adoptable).to eq(2)
-      expect(@shelter2.count_adoptable).to eq(1)
+      expect(@shelter1.pet_count(true)).to eq(2)
+      expect(@shelter2.pet_count(true)).to eq(1)
     end
 
     it 'can count adopted' do
 
-      expect(@shelter1.count_adopted).to eq(0)
+      expect(@shelter1.pet_count(false)).to eq(0)
 
       @pet1.update({adoptable: false})
-      expect(@shelter1.count_adopted).to eq(1)
-      expect(@shelter1.count_adoptable).to eq(1)
+      expect(@shelter1.pet_count(false)).to eq(1)
+      expect(@shelter1.pet_count(true)).to eq(1)
     end
   end
 

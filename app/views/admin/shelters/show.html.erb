@@ -17,8 +17,8 @@
   </tr>
   <tr>
     <td><%= @shelter.avg_pet_age %></td>
-    <td><%= @shelter.count_adoptable %></td>
-    <td><%= @shelter.count_adopted %></td>
+    <td><%= @shelter.pet_count(true) %></td>
+    <td><%= @shelter.pet_count(false) %></td>
   </tr>
 </table>
 
@@ -26,7 +26,7 @@
 <% if @pending_pets != [] %>
   <% @pending_pets.each do |pet| %>
     <%= pet.name %>
-    <p><%= link_to "Application # #{pet.app_id}", admin_app_path(pet.app_id), method: :get %> </p>
+    <p><%= link_to "Application # #{pet.app_id}", admin_application_path(pet.app_id), method: :get %> </p>
     <%= pet.pet_app_status %></p>
   <% end %>
 <% end %>

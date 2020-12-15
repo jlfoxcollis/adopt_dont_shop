@@ -17,9 +17,9 @@ RSpec.describe 'Update pet from pet show page' do
 
     expect(current_path).to eq("/pets/#{@pet1.id}/edit")
 
-    fill_in "name", with: "Thora"
-    fill_in "approximate_age", with: 5
-    fill_in "sex", with: "female"
+    fill_in "pet[name]", with: "Thora"
+    fill_in "pet[approximate_age]", with: 5
+    find("option[value='male']").click
 
     click_button("Update")
 
@@ -28,7 +28,7 @@ RSpec.describe 'Update pet from pet show page' do
     expect(page).to have_content("Name: Thora")
     expect(page).to have_content("Approx Age: 5")
     expect(page).to_not have_content("Approx Age: 2")
-    expect(page).to have_content("Sex: female")
-    expect(page).to_not have_content("Sex: male")
+    expect(page).to have_content("male")
+    expect(page).to_not have_content("Sex: female")
   end
 end
