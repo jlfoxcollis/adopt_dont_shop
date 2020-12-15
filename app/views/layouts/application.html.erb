@@ -9,18 +9,28 @@
     <%= javascript_include_tag 'application' %>
 
   <header>
-    <ul class="navbar">
-      <li><%= link_to "admin", admin_path %></li>
-      <li><%= link_to "Admin-Shelters", admin_shelters_path %></li>
-      <li><%= link_to "Admin-Apps", admin_applications_path %></li>
-    </ul>
-    <div class="nav-bar">
-      <ul>
-        <p><%= link_to "Back to Home", "/" %>
-          <%= link_to "Go to Shelters", "/shelters" %>
-          <%= link_to 'Go to Pets', "/pets" %>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+    <div class="container-fluid">
 
-  </head><br>
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item active"><%= link_to "admin", admin_path %></li>
+          <li><%= link_to "Admin-Shelters", admin_shelters_path %></li>
+          <li><%= link_to "Admin-Apps", admin_applications_path %></li>
+          <li class="nav-item dropdown">
+        </ul><br>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li><%= link_to "Back to Home", "/" %></li>
+              <li><%= link_to "Go to Shelters", "/shelters" %></li>
+              <li><%= link_to 'Go to Pets', "/pets" %></li>
+            </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+  </head>
 
   <body>
 

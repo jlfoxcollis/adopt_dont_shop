@@ -13,66 +13,23 @@
 
  */
 
+ $body-bg: #e2e2e2;
+
+$theme-colors: (
+  "primary": #FF304F,
+  "secondary": #CACACA,
+  "success": #015668,
+  "info": #0F81C7,
+  "warning": #0DE2EA,
+  "danger": #06648C,
+  "light": #ececec,
+  "dark": #222222
+);
+
  // Custom Bootstrap variables must be set or imported before bootstrap.
- // @import "bootstrap";
+ @import "bootstrap";
 
- .App-list, tr, th, td {
-  border: 1px solid black;
-  text-align: left;
-  padding: 0px;
-}
-th {
-  font-weight: 900;
-}
-.navbar {
-list-style-type: none;
-color:black;
-margin: 0;
-padding: 0;
-overflow: hidden;
-background-color: #618685;
-}
-.navbar li {
-  float: left;
-}
-li {
-font-size: 1.0em;
-word-spacing: 0px;
-padding: 5px;
-}
-
-li a {
-display: block;
-color: black;
-padding: 2px;
-}
-
-.home {
-  color: black;
-  float: none;
-  word-spacing: 0px;
-  width: 150px;
-}
-
-li a:hover {
-background-color: red;
-}
-
-body {
-  background-color: #618685;
-}
-//
-// body {
-//   background-color: #fbf5cd;
-//    color: #065e09;
-//    font-family: Arial;
-//    font-size: 1.0em;
-//    line-height: 1.0em;
-//    margin: 0em;
-//    text-align: left;
-// }
-//
-// .pet_stats, th, td {
+//  .App-list, tr, th, td {
 //   border: 1px solid black;
 //   text-align: left;
 //   padding: 0px;
@@ -80,36 +37,41 @@ body {
 // th {
 //   font-weight: 900;
 // }
-//
-// header {
-//   padding: 10px;
-//   background-color: lightblue;
-//   color: white;
-//   font-family: Arial;
-//   line-height: 2em;
-//   text-align: center;
+// .navbar {
+// list-style-type: none;
+// color:black;
+// margin: 0;
+// padding: 0;
+// overflow: hidden;
+// background-color: #618685;
+// }
+// .navbar li {
+//   float: left;
+// }
+// li {
+// font-size: 1.0em;
+// word-spacing: 0px;
+// padding: 5px;
 // }
 //
-// .header-link {
-//   background-color: #fbf5cd;
-//   font-size: 20px;
+// li a {
+// display: block;
+// color: black;
+// padding: 2px;
+// }
+//
+// .home {
 //   color: black;
+//   float: none;
+//   word-spacing: 0px;
+//   width: 150px;
 // }
 //
-// .nav-bar {
-//   font-family: Arial;
-//   background-color: lightblue;
-//   color: black;
-//   text-align: left;
-//   font-size: 25px;
-//   padding: 0px;
-//
+// li a:hover {
+// background-color: red;
 // }
 //
-// * {
-//   box-sizing: border-box;
+// body {
+//   background-color: #618685;
 // }
 //
-// .row {
-//   display: flex;
-// }
