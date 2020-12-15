@@ -9,7 +9,6 @@
 Application.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
-Application_pet.destroy_all
 
 
 Application.create!(name: "James Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")

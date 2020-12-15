@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get '/dashboard', to: "dashboard#index"
   end
 
-  resources :shelters, as: 'shelters'
+  resources :shelters, as: 'shelters' do
+    resources :pets, controller: "shelter_pets", only: [:index, :new, :create]
+  end
   resources :pets, as: 'pets'
   namespace :admin do
     resources :applications
@@ -15,10 +17,10 @@ Rails.application.routes.draw do
   end
   resources :applications, as: 'applications'
 
-    get "/shelters/:shelter_id/pets", to: "shelter_pets#index", as: 'shelter_pets'
-    get "/shelters/:shelter_id/pets/new", to: "shelter_pets#new", as: 'new_shelter_pet'
-    post "/shelters/:shelter_id/pets", to: "shelter_pets#create", as: 'create_shelter_pet'
-    get "/shelters/:id/pets/:id", to: "pets#show", as: 'show_pet'
+    # get "/shelters/:shelter_id/pets", to: "shelter_pets#index", as: 'shelter_pets'
+    # get "/shelters/:shelter_id/pets/new", to: "shelter_pets#new", as: 'new_shelter_pet'
+    # post "/shelters/:shelter_id/pets", to: "shelter_pets#create", as: 'create_shelter_pet'
+    # get "/shelters/:id/pets/:id", to: "pets#show", as: 'show_pet'
 
 
 
