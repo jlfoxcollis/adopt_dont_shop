@@ -15,11 +15,10 @@ RSpec.describe 'admin shelters index' do
 
   it "can can show an app page progress" do
     visit application_path(@app.id)
-
-    expect(page).to have_content("In Progress")
-    @app.update({application_status: "Pending"})
+    expect(page).to have_content("in_progress")
+    @app.update({application_status: 1})
     visit application_path(@app.id)
-    expect(page).to have_content("Pending")
+    expect(page).to have_content("pending")
   end
 
   it "can search for pets" do
@@ -28,9 +27,20 @@ RSpec.describe 'admin shelters index' do
     fill_in 'search', with: "Thor"
 
     click_on "search"
-    expect(page).to have_content("Thor")
-    click_on "Adopt this Pet?"
-    click_on "Submit Application"
 
+    expect(page.all('a')[8]).to have_content("Thor")
+  end
+
+  if "can adopt a pet" do
+    visit application_path(@app.id)
+    fill_in 'search', with: "Zeus"
+    click_on "search"
+
+    expect(page).to have_content("Zeus")
+    click_on "Adopt this Pet?"
+    expect(page).to have_content("Zeus")
+    fill_in 'search', with: "Zeus"
+    click_on "search"
+    click_on "Submit Application"
   end
 end

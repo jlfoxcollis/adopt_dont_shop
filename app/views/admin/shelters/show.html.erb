@@ -22,8 +22,8 @@
   </tr>
 </table>
 
+<% if @pending_pets %>
 <h2>ACTION REQUIRED!</h2>
-<% if @pending_pets != [] %>
   <% @pending_pets.each do |pet| %>
     <%= pet.name %>
     <p><%= link_to "Application # #{pet.app_id}", admin_application_path(pet.app_id), method: :get %> </p>

@@ -2,24 +2,16 @@
   <section id="pet-<%= pet.name %>">
     <%= pet.name %>
     <% if pet.status == nil %>
-      <% if pet.apps_approved == 0 %>
-        <%= form_tag admin_application_path(@app.id), method: :get do %>
-          <%= hidden_field_tag :pet_id, "#{pet.id}" %>
-          <%= hidden_field_tag :pet_app_id, "#{pet.pet_app_id}" %>
-          <%= hidden_field_tag :status, "true" %>
-          <div id="accept-<%= pet.id %>">
-            <%= submit_tag 'Approve' %>
-          </div>
-        <% end %>
+      <% if pet.none_approved? %>
+      <div id="accept-<%= pet.id %>">
+        <%= button_to "Approve", application_pet_path(pet.pet_app_id), method: :patch, params: {
+          app_id: @app.id, pet_app_id: pet.pet_app_id, status: true} %>
+      </div>
       <% end %>
-      <%= form_tag admin_application_path(@app.id), method: :get do %>
-        <%= hidden_field_tag :pet_id, "#{pet.id}" %>
-        <%= hidden_field_tag :pet_app_id, "#{pet.pet_app_id}" %>
-        <%= hidden_field_tag :status, "false" %>
         <div id="deny-<%= pet.id %>">
-          <%= submit_tag 'Reject' %>
+      <%= button_to "Reject", application_pet_path(pet.pet_app_id), method: :patch, params: {
+          app_id: @app.id, pet_app_id: pet.pet_app_id, status: false} %>
         <div>
-      <% end %>
     <% elsif pet.status == true %>
       <p> Approved! </p>
     <% elsif pet.status == false %>

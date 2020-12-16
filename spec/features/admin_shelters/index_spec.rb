@@ -11,17 +11,16 @@ RSpec.describe 'admin shelters index' do
     @pet3 = @shelter1.pets.create!(image:"puppies.jpeg", name: "Zeus", description: "dog", approximate_age: 4, sex: "male")
     @pet_app1 = ApplicationPet.create!(pet_id: @pet1.id, application_id: @app.id)
     @pet_app2 = ApplicationPet.create!(pet_id: @pet2.id, application_id: @app.id)
-    @app.update({application_status: "Pending"})
+    @app.update({application_status: 1})
   end
 
   it "can can show shelters in rev order" do
     visit admin_shelters_path
-
-    expect(page.all('li')[0]).to have_content("#{@shelter2.name}")
-    expect(page.all('li')[1]).to have_content("#{@shelter3.name}")
-    expect(page.all('li')[2]).to have_content("#{@shelter1.name}")
-    expect(page.all('li')[3]).to have_content("#{@shelter1.name}")
-    expect(page.all('li')[4]).to have_content("#{@shelter2.name}")
+    expect(page.all('li')[7]).to have_content("#{@shelter2.name}")
+    expect(page.all('li')[8]).to have_content("#{@shelter3.name}")
+    expect(page.all('li')[9]).to have_content("#{@shelter1.name}")
+    expect(page.all('li')[10]).to have_content("#{@shelter1.name}")
+    expect(page.all('li')[11]).to have_content("#{@shelter2.name}")
   end
 
   it "can show a shelters stuff" do

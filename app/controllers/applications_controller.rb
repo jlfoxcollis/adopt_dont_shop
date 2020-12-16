@@ -8,7 +8,6 @@ class ApplicationsController < ApplicationController
     if @app.save
       redirect_to application_path(@app.id)
     else
-      # binding.pry
       flash.now[:notice] = @app.errors.full_messages
       render :new, action: @app
     end
@@ -20,10 +19,6 @@ class ApplicationsController < ApplicationController
     @chosen_ones = @app.pets
     if params[:search]
         @selected = Pet.search_pets(params[:search])
-    end
-    if params[:adopt] && params[:pet_id]
-      pet = Pet.find(params[:pet_id])
-      ApplicationPet.create!(pet: pet, application: @app)
     end
   end
 

@@ -9,7 +9,6 @@
 Application.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
-Application_pet.destroy_all
 
 
 Application.create!(name: "James Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")
@@ -19,3 +18,12 @@ Application.create!(name: "James Fox", street: "2286 Huntington Dr", city: "LHC"
 @shelter1.pets.create!(image:"puppies.jpeg", name: "Thor", description: "dog", approximate_age: 2, sex: "male")
 @shelter2.pets.create!(image:"puppies.jpeg", name: "Athena", description: "cat", approximate_age: 3, sex: "female")
 @shelter1.pets.create!(image:"puppies.jpeg", name: "Zeus", description: "dog", approximate_age: 4, sex: "male")
+@shelter1.pets.create!(image:"puppies.jpeg", name: "pepper", description: "dog", approximate_age: 6, sex: "male")
+@shelter1.pets.create!(image:"puppies.jpeg", name: "tucker", description: "dog", approximate_age: 3, sex: "male")
+@shelter1.pets.create!(image:"puppies.jpeg", name: "Babe", description: "dog", approximate_age: 9, sex: "male")
+@shelter1.pets.create!(image:"puppies.jpeg", name: "Luna", description: "dog", approximate_age: 2, sex: "male")
+@shelter1.pets.create!(image:"puppies.jpeg", name: "Rex", description: "dog", approximate_age: 4, sex: "male")
+@shelter2.pets.create!(image:"puppies.jpeg", name: "Party", description: "cat", approximate_age: 5, sex: "female")
+@shelter2.pets.create!(image:"puppies.jpeg", name: "Chip", description: "cat", approximate_age: 1, sex: "female")
+@shelter2.pets.create!(image:"puppies.jpeg", name: "Asshole", description: "cat", approximate_age: 8, sex: "female")
+@shelter2.pets.create!(image:"puppies.jpeg", name: "Deus", description: "cat", approximate_age: 3, sex: "female")

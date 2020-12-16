@@ -17,7 +17,7 @@
   </tr>
   <tr>
 <% @applications.each do |app| %>
-  <% if app.application_status == "Pending" %>
+  <% if app.pending? %>
     <section id="application-<%=app.id %>">
       <td><%= link_to "review #{app.id}", admin_application_path(app.id), method: :get %></td>
       <td><%= app.name %></td>
