@@ -2,9 +2,15 @@ class ApplicationPetsController < ApplicationController
 
   def create
     app_pet = ApplicationPet.new(privvy_params)
-
-    app_pet.save
-    redirect_to application_path(params[:application_id])
+    @app = Application.find(params[:application_id])
+    @pets = Pet.adoptable
+    @chosen_ones = @app.pets
+    if app_pet.save
+      redirect_to application_path(params[:application_id])
+    else
+      flash.now[:notice] = "Pet already exists on Application"
+      redirect_to application_path(params[:application_id])
+    end
   end
 
   def update

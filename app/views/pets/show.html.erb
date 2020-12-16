@@ -1,5 +1,3 @@
-<body>
-
   <h2>Name: <%= "#{@pet.name}" %></h2>
   <div class="image"><%= image_tag "#{@pet.image}" %></div><br>
   Description: <%= @pet.description %><br>
@@ -8,4 +6,3 @@
   Adoption Status: <%= @pet.adoptable? %><br>
   <a href="/pets/<%= @pet.id %>/edit">Update Pet</a>
   <%= button_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
-</body>

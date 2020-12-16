@@ -26,17 +26,17 @@ $theme-colors: (
   "dark": #222222
 );
 
+table, tr, th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 0px;
+}
+th {
+  font-weight: 900;
+}
  // Custom Bootstrap variables must be set or imported before bootstrap.
  @import "bootstrap";
 
-//  .App-list, tr, th, td {
-//   border: 1px solid black;
-//   text-align: left;
-//   padding: 0px;
-// }
-// th {
-//   font-weight: 900;
-// }
 // .navbar {
 // list-style-type: none;
 // color:black;

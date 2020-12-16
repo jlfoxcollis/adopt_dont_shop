@@ -27,9 +27,20 @@ RSpec.describe 'admin shelters index' do
     fill_in 'search', with: "Thor"
 
     click_on "search"
-    expect(page).to have_content("Thor")
-    click_on "Adopt this Pet?"
-    click_on "Submit Application"
 
+    expect(page.all('a')[8]).to have_content("Thor")
+  end
+
+  if "can adopt a pet" do
+    visit application_path(@app.id)
+    fill_in 'search', with: "Zeus"
+    click_on "search"
+
+    expect(page).to have_content("Zeus")
+    click_on "Adopt this Pet?"
+    expect(page).to have_content("Zeus")
+    fill_in 'search', with: "Zeus"
+    click_on "search"
+    click_on "Submit Application"
   end
 end
