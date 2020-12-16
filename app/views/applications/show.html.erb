@@ -1,18 +1,15 @@
-<body>
   <h3>Application Status:<%= @app.application_status %></h3>
-  <% if @chosen_ones.count >= 1 && @app.application_status == "In Progress" %>
-    <%= button_to "Submit Application", application_path(@app.id), params: {:application_status => "Pending"}, method: :patch %>
+  <% if @chosen_ones.count >= 1 && @app.in_progress? %>
+    <%= button_to "Submit Application", application_path(@app.id), params: {application_status: :pending}, method: :patch %>
   <% end %>
-  <% if @app.application_status == "Pending" %>
     <h3>Pets chosen for Adoption </h3>
     <% @chosen_ones.each do |pet| %>
       <%= link_to "#{pet.name}", pet_path(pet.id) %>
-    <% end %>
-  <% end %>
+    <% end %><br>
+
 
   <%= @app.name %>
   <%= @app.street %>
   <%=  "#{@app.city}" + ", " + "#{@app.state}" + " " + "#{@app.zip_code}" %>
   <%= @app.description %>
   <%= render partial: 'adopt' %>
-</body>

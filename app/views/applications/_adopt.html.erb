@@ -1,4 +1,4 @@
-<% if @app.application_status == "In Progress" %>
+<% if @app.in_progress? %>
   <h3> Add a Pet to this Application</h3>
   <%= form_tag application_path, method: :get do %>
     <%= label_tag 'Search by Pet Name' %>
@@ -15,7 +15,7 @@
     <%= selectee.approximate_age %>
     <%= selectee.sex %>
     <%= selectee.adoptable %>
-    <%= button_to "Adopt this Pet?", application_path(@app.id),
-        method: :get, params: {:pet_id => selectee.id, :adopt => "true"} %>
+    <%= button_to "Adopt this Pet?", application_pets_path,
+        method: :post, params: {pet_id: selectee.id, application_id: @app.id} %>
   <% end %>
 <% end %>

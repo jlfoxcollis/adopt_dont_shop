@@ -66,7 +66,7 @@ describe Pet, type: :model do
       @pet3 = @shelter1.pets.create!(image:"puppies.jpeg", name: "Zeus", description: "dog", approximate_age: 4, sex: "male")
       pet_app1 = ApplicationPet.create!(pet_id: @pet1.id, application_id: app.id)
       pet_app2 = ApplicationPet.create!(pet_id: @pet2.id, application_id: app.id)
-      app.update!({application_status: "Pending"})
+      app.update!({application_status: 1})
 
       expect(Pet.search_pets(@pet1.name)).to eq([@pet1])
     end

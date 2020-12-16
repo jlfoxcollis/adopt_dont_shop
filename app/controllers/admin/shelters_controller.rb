@@ -6,6 +6,8 @@ class Admin::SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @pending_pets = @shelter.pending_pets
+    if @shelter.pending_pets != []
+      @pending_pets = @shelter.pending_pets
+    end
   end
 end

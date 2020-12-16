@@ -15,11 +15,10 @@ RSpec.describe 'admin shelters index' do
 
   it "can can show an app page progress" do
     visit application_path(@app.id)
-
-    expect(page).to have_content("In Progress")
-    @app.update({application_status: "Pending"})
+    expect(page).to have_content("in_progress")
+    @app.update({application_status: 1})
     visit application_path(@app.id)
-    expect(page).to have_content("Pending")
+    expect(page).to have_content("pending")
   end
 
   it "can search for pets" do

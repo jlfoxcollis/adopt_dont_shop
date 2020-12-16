@@ -11,7 +11,7 @@ describe 'admin_apps show page' do
     @pet3 = @shelter1.pets.create!(image:"puppies.jpeg", name: "Zeus", description: "dog", approximate_age: 4, sex: "male")
     @pet_app1 = ApplicationPet.create!(pet_id: @pet1.id, application_id: @app.id)
     @pet_app2 = ApplicationPet.create!(pet_id: @pet2.id, application_id: @app.id)
-    @app.update({application_status: "Pending"})
+    @app.update({application_status: 1})
   end
 
   it "displays  the applicant information" do
@@ -24,7 +24,7 @@ describe 'admin_apps show page' do
 
   it "can update pets on application" do
     visit admin_application_path(@app.id)
-    
+
     within("#accept-#{@pet1.id}") do
       click_on "Approve"
     end

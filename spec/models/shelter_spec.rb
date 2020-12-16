@@ -33,7 +33,7 @@ describe Shelter, type: :model do
     it "can count pending_pets" do
       expect((@shelter1.pending_pets).length).to eq(0)
 
-      @app.update({application_status: "Pending"})
+      @app.update({application_status: 1})
 
       expect((@shelter1.pending_pets).length).to eq(1)
     end
@@ -64,7 +64,7 @@ describe Shelter, type: :model do
 
       expect(Shelter.pending_apps).to eq([])
 
-      @app.update!({application_status: "Pending"})
+      @app.update!({application_status: 1})
       expect((Shelter.pending_apps).length).to eq(2)
     end
 
