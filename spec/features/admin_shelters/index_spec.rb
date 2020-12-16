@@ -16,12 +16,11 @@ RSpec.describe 'admin shelters index' do
 
   it "can can show shelters in rev order" do
     visit admin_shelters_path
-
-    expect(page.all('li')[0]).to have_content("#{@shelter2.name}")
-    expect(page.all('li')[1]).to have_content("#{@shelter3.name}")
-    expect(page.all('li')[2]).to have_content("#{@shelter1.name}")
-    expect(page.all('li')[3]).to have_content("#{@shelter1.name}")
-    expect(page.all('li')[4]).to have_content("#{@shelter2.name}")
+    expect(page.all('li')[7]).to have_content("#{@shelter2.name}")
+    expect(page.all('li')[8]).to have_content("#{@shelter3.name}")
+    expect(page.all('li')[9]).to have_content("#{@shelter1.name}")
+    expect(page.all('li')[10]).to have_content("#{@shelter1.name}")
+    expect(page.all('li')[11]).to have_content("#{@shelter2.name}")
   end
 
   it "can show a shelters stuff" do
