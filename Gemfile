@@ -24,14 +24,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap', '~> 4.5.3'
-gem 'turbolinks', '~> 5.2.1'
-gem 'jquery-rails'
-gem 'yarn'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
