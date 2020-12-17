@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :application_pets
     resources :shelters
   end
+
+  get '/admin/', to: "admin#index"
 end

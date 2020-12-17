@@ -32,11 +32,13 @@ table, tr, th, td {
   text-align: left;
   padding: 0px;
 }
+
 th {
   font-weight: 900;
 }
+
  // Custom Bootstrap variables must be set or imported before bootstrap.
- // @import "bootstrap";
+ @import "bootstrap";
 
 // .navbar {
 // list-style-type: none;
