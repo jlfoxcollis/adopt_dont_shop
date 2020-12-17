@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.5.3'
 gem 'turbolinks', '~> 5.2.1'
 gem 'jquery-rails'
+gem 'yarn'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
