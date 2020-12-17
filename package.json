@@ -1,5 +1,12 @@
 {
   "name": "adopt_dont_shop_m2",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jlfoxcollis/adopt_dont_shop.git",
+  "author": "James Fox-Collis <jlfoxcollis@gmail.com>",
+  "license": "MIT"
 }
