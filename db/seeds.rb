@@ -10,7 +10,7 @@ Application.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
 
-app1 = Application.create!(name: "John Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")
+app1 = Application.create!(name: "John Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!", application_status: 1)
 app2 = Application.create!(name: "Noooo Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")
 app3 = Application.create!(name: "YESSS Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")
 app4 = Application.create!(name: "LEE Fox", street: "2286 Huntington Dr", city: "LHC", state: "AZ", zip_code: 86403, description: "I WANT HIM!")
