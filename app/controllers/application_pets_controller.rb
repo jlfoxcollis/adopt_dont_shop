@@ -8,8 +8,7 @@ class ApplicationPetsController < ApplicationController
     if app_pet.save
       redirect_to application_path(params[:application_id])
     else
-      flash.now[:notice] = "Pet already exists on Application"
-      redirect_to application_path(params[:application_id])
+      redirect_to application_path(params[:application_id]), notice: "The pet you selected already exists on this application."
     end
   end
 
