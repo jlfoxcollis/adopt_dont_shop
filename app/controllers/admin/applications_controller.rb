@@ -9,12 +9,10 @@ class Admin::ApplicationsController < ApplicationController
   end
 
   def app_status
-    if @app.all_approved == true
-      @pets.all.update({adoptable: false})
-      @app.update!({application_status: 2})
-    elsif @app.not_all_approved == true
-      @app.application_pets.update({status: false})
-      @app.update!({application_status: 3})
+    if @app.all_approved
+      @app.update_to_approved
+    elsif @app.not_all_approved
+      @app.update_to_rejected
     end
   end
 end
