@@ -4,6 +4,7 @@
   <%= form.text_field :city %><br>
   <%= form.text_field :state %><br>
   <%= form.text_field :zip_code %><br>
-  <%= form.text_field :description %><br>
+  <p>Tell us why you would make a good home for these pets?</p>
+  <%= form.text_area :description, size: "70x5" %><br>
   <%= form.submit "Submit" %>
 <% end %>
