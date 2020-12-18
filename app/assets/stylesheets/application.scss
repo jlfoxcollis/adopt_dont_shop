@@ -12,9 +12,6 @@
  *
 
  */
-
-
-
   $body-bg: #e2e2e2;
 
  $theme-colors: (
@@ -30,51 +27,20 @@
 
  table, tr, th, td {
    border: 1px solid black;
-   word-spacing: 5px;
+   word-spacing: 2px;
    text-align: left;
    padding: 0px;
  }
  th {
-   font-weight: 900;
+   font-weight: 700;
+ }
+ .navbar {
+   font-size: 1.0em;
+ }
+
+ body {
+   padding: 5px;
  }
   // Custom Bootstrap variables must be set or imported before bootstrap.
   @import "bootstrap";
 //
-// .navbar {
-// list-style-type: none;
-// color:black;
-// margin: 0;
-// padding: 0;
-// overflow: hidden;
-// background-color: #618685;
-// }
-// .navbar li {
-//   float: left;
-// }
-// li {
-// font-size: 1.0em;
-// word-spacing: 0px;
-// padding: 5px;
-// }
-//
-// li a {
-// display: block;
-// color: black;
-// padding: 2px;
-// }
-//
-// .home {
-//   color: black;
-//   float: none;
-//   word-spacing: 0px;
-//   width: 150px;
-// }
-//
-// li a:hover {
-// background-color: red;
-// }
-//
-// body {
-//   background-color: #618685;
-// }
-// //
