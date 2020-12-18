@@ -2,9 +2,9 @@ class Application < ApplicationRecord
   validates :name, :city, :description, presence: true
   validates :state, length: {maximum: 2}, presence: true
   validates :zip_code, numericality: { only_integer: true }, presence: true
-  enum application_status: [:in_progress, :pending, :approved, :rejected]
   has_many :application_pets, dependent: :destroy
   has_many :pets, through: :application_pets
+  enum application_status: [:in_progress, :pending, :approved, :rejected]
 
   def all_approved
     application_pets.where('status = ?', true).count == application_pets.count
